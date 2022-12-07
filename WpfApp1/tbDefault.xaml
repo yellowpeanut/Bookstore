@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="tbDefault" TargetType="TextBox">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="#FF6E3D3F"/>
+        <Setter Property="Background" Value="#FFAB6F5C"/>
+        <Setter Property="Foreground" Value="#FFFFF8F0"/>
+        
+    </Style>
+    
+</ResourceDictionary>

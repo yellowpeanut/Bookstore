@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Магазин" Height="450" Width="800" Background="#FF94584D" BorderBrush="#FF6E3D3F" Foreground="#FFFFF8F0" WindowStyle="None" WindowState="Maximized" Icon="book512.png">
+    <Grid Background="#FF94584D">
+
+        <DockPanel LastChildFill="False" Background="#FF59333C" VerticalAlignment="Top" Height="30" MouseDown="DockPanel_MouseDown">
+            <Image Width="28" Margin="24,0,0,0" Height="28" Source="book32.png"/>
+            <Label Content="Магазин" HorizontalAlignment="Left" Margin="12,0,0,0" Foreground="#FFFFF8F0" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="5,0"/>
+            <Button x:Name="btnCloseApp" Width="32" DockPanel.Dock="Right"  Click="btnCloseApp_Click" Style="{StaticResource btnWndControl}">
+                <Image Source="close32.png" Width="22"/>
+            </Button>
+            <Button x:Name="btnFullscreenApp" Width="32" DockPanel.Dock="Right"  Click="btnFullscreenApp_Click" Style="{StaticResource btnWndControl}">
+                <Image Source="maximize32.png" Width="22"/>
+            </Button>
+            <Button x:Name="btnHideApp" Width="32" DockPanel.Dock="Right"  Click="btnHideApp_Click" Style="{StaticResource btnWndControl}">
+                <Image Source="minimize32.png" Width="22"/>
+            </Button>
+
+        </DockPanel>
+
+        <DataGrid x:Name="dataGrid" Margin="10,35,10,87" Style="{StaticResource dgDefault}">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
+        <Button x:Name="btnAddBook" Content="Добавить книгу" Margin="10,0,0,47" HorizontalAlignment="Left" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnAddBook_Click"/>
+        <Button x:Name="btnDeleteBook" Content="Удалить книгу" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnDeleteBook_Click"/>
+        <Button x:Name="btnStoreOrders" Content="Заказы магазина" HorizontalAlignment="Left" Margin="135,0,0,47" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnStoreOrders_Click"/>
+        <Button x:Name="btnInfoBook" Content="Доп. Информация" HorizontalAlignment="Left" Margin="135,0,0,10" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnInfoBook_Click"/>
+        <Button x:Name="btnStoreProfit" Content="Прибыль магазина" HorizontalAlignment="Left" Margin="260,0,0,47" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnStoreProfit_Click"/>
+        <Button x:Name="btnAllProfits" Content="Общая прибыль" HorizontalAlignment="Left" Margin="260,0,0,10" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnAllProfits_Click"/>
+        <Button x:Name="btnFindBook" Content="Поиск" HorizontalAlignment="Left" Margin="385,0,0,47" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnFindBook_Click"/>
+        <Button x:Name="btnReset" Content="Сброс" HorizontalAlignment="Left" Margin="385,0,0,10" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnReset_Click"/>
+        <Button x:Name="btnGoBack" Content="Назад" HorizontalAlignment="Right" Margin="0,0,10,47" VerticalAlignment="Bottom" Style="{StaticResource btnDefault}" Click="btnGoBack_Click"/>
+        <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Height="23" Margin="510,0,0,47" TextWrapping="Wrap" Text="Жанр" VerticalAlignment="Bottom" Width="120" Style="{StaticResource tbDefault}" VerticalContentAlignment="Center" Padding="3,0,0,0"/>
+    </Grid>
+</Window>
